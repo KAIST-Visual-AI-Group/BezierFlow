@@ -16,5 +16,5 @@ KAIST
 We introduce BézierFlow, a lightweight training approach for few-step generation with pretrained diffusion and flow models. BézierFlow achieves a 2–3× performance improvement for sampling with ≤ 10 NFEs while requiring only 15 minutes of training.
 
 
-### Arxiv Paper and Code - To be released!
+### Code - To be released!
 </div>
