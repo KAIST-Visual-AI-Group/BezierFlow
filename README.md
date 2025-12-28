@@ -1,5 +1,5 @@
 <div align="center">
-<h2>BézierFlow: Bézier Stochastic Interpolant Schedulers for Few-Step Generation</h2>
+<h2>BézierFlow: Learning Bézier Stochastic Interpolant Schedulers for Few-Step Generation</h2>
 
 [**Yunhong Min**](https://myh4832.github.io)* · [**Juil Koo**](https://63days.github.io)* · [**Seungwoo Yoo**](https://dvelopery0115.github.io) · [**Minhyuk Sung**](https://mhsung.github.io) (* Equal Contribution)
 
