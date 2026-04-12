@@ -1,0 +1,7 @@
+.vscode
+__pycache__
+all_fids/
+all_logs/
+fid-refs/
+pretrained/
+train_data/

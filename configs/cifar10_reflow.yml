@@ -1,0 +1,53 @@
+model: reflow
+config: configs/reflow/cifar10_rf_gaussian_ddpmpp.yml
+ckp_path: pretrained/reflow_1.pth
+
+# Original schedule
+prediction_type: v
+schedule: rf
+
+# New schedule
+p_order: 32
+new_schedule: si
+new_prediction_type: v
+monotonic: true
+time_mode: time
+
+# ODE solver parameters
+solver_name: midpoint
+steps: 10
+order: 3
+
+# Training parameters
+seed: 0
+log_path: all_logs/cifar10_logs/
+data_dir: train_data/train_data_reflow_rk45/rk45_NFE1000_reflow_seed0
+loss_type: LPIPS
+main_train_batch_size: 8
+main_valid_batch_size: 20
+num_train: 200
+num_valid: 200
+training_rounds: 8
+lr_time_1: 0.005
+lr_time_2: 0.1
+min_lr_time_1: 0.00005
+min_lr_time_2: 0.000001
+momentum_time_1: 0.9
+weight_decay_time_1: 0.0
+lr_time_decay: 0.8
+patient: 5
+visualize: true
+
+scale: 0.0
+
+# Testing parameters
+learn: false
+load_from: null
+skip_type: null
+fid_folder: all_fids/cifar10_fids/
+sampling_batch_size: 150
+sampling_seed: 0
+ref_path: fid-refs/cifar10-32x32.npz
+total_samples: 50000
+save_png: false
+save_pt: true

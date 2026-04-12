@@ -1,0 +1,49 @@
+model: edm-afhqv2
+prediction_type: eps
+ckp_path: pretrained/edm-afhqv2-64x64-uncond-vp.pkl
+
+schedule: ve
+solver_name: uni_pc
+unipc_variant: bh1
+steps: 10
+order: 3
+
+# Stochastic interpolant
+p_order: 32
+new_schedule: si
+new_prediction_type: pf_ode
+monotonic: true
+time_mode: lambda
+
+skip_type: null
+
+# Training parameters
+seed: 0
+log_path: all_logs/afhqv2_logs/
+data_dir: train_data/train_data_afhqv2_edm/rk45_NFE1000_edm_seed0
+loss_type: LPIPS
+main_train_batch_size: 2
+main_valid_batch_size: 10
+num_train: 50
+num_valid: 50
+training_rounds: 8
+lr_time_1: 0.005
+lr_time_2: 0.01
+min_lr_time_1: 0.00005
+min_lr_time_2: 0.000001
+momentum_time_1: 0.9
+weight_decay_time_1: 0.0
+lr_time_decay: 0.8
+patient: 5
+visualize: true
+
+# Testing parameters
+learn: false
+load_from: null
+fid_folder: all_fids/afhqv2_fids/
+sampling_batch_size: 150
+sampling_seed: 0
+ref_path: fid-refs/afhqv2-64x64.npz
+total_samples: 50000
+save_png: false
+save_pt: true

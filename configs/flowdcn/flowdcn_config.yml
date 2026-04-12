@@ -1,0 +1,10 @@
+height: 256
+width: 256
+input_size: 32
+patch_size: 2
+in_channels: 4
+num_groups: 16
+hidden_size: 1152
+num_blocks: 28
+num_classes: 1000
+learn_sigma: true

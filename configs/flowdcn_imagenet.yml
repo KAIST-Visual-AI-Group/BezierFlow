@@ -1,0 +1,56 @@
+model: flowdcn
+config: configs/flowdcn/flowdcn_config.yml
+ckp_path: pretrained/FlowDCN-XL-2M-R256.pth
+vae_path: stabilityai/sd-vae-ft-ema
+
+# Original schedule
+prediction_type: v
+schedule: rf
+
+# New schedule
+new_schedule: si
+new_prediction_type: v
+p_order: 32
+monotonic: true
+
+skip_type: null
+
+# ODE solver parameters
+solver_name: uni_pc
+unipc_variant: bh2
+steps: 10
+order: 3
+
+scale: 4.0
+time_mode: time
+
+# Training parameters
+seed: 0
+log_path: all_logs/flowdcn_logs/
+data_dir: train_data/train_data_flowdcn/rk45_NFE1000_rf_seed0
+loss_type: LPIPS
+main_train_batch_size: 2
+main_valid_batch_size: 10
+num_train: 50
+num_valid: 50
+training_rounds: 5
+lr_time_1: 0.005
+lr_time_2: 0.1
+min_lr_time_1: 0.00005
+min_lr_time_2: 0.000001
+momentum_time_1: 0.9
+weight_decay_time_1: 0.0
+lr_time_decay: 0.8
+patient: 5
+visualize: true
+
+# Testing parameters
+learn: false
+load_from: null
+fid_folder: all_fids/flowdcn_fids/
+sampling_batch_size: 50
+sampling_seed: 0
+ref_path: fid-refs/VIRTUAL_imagenet256_labeled.npz
+total_samples: 50000
+save_png: false
+save_pt: true
