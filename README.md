@@ -167,8 +167,8 @@ If you find our work useful, please consider citing our paper:
 
 This repository builds upon the following projects:
 
-- [LD3](https://github.com/vinhsuhi/ld3) (Tong et al.)
-- [EDM](https://github.com/NVlabs/edm) (Karras et al.)
-- [RectifiedFlow](https://github.com/gnobitab/RectifiedFlow) (Liu et al.)
-- [FlowDCN](https://github.com/MCG-NJU/FlowDCN) (Wang et al.)
-- [UniPC](https://github.com/wl-zhao/UniPC) (Zhao et al.)
+- [LD3](https://github.com/vinhsuhi/ld3) (ICLR 2025, Tong et al.)
+- [EDM](https://github.com/NVlabs/edm) (NeurIPS 2022, Karras et al.)
+- [RectifiedFlow](https://github.com/gnobitab/RectifiedFlow) (ICLR 2023, Liu et al.)
+- [FlowDCN](https://github.com/MCG-NJU/FlowDCN) (NeurIPS 2024, Wang et al.)
+- [UniPC](https://github.com/wl-zhao/UniPC) (NeurIPS 2023, Zhao et al.)
