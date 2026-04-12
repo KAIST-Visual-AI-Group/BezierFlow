@@ -1,45 +1,27 @@
-# BézierFlow: Learning Bézier Stochastic Interpolant Schedulers for Few-Step Generation
+<div align="center">
+<h2>BézierFlow: Learning Bézier Stochastic Interpolant Schedulers for Few-Step Generation</h2>
 
-<p align="center">
-    <a href="https://myh4832.github.io">Yunhong Min</a><sup>*</sup> &nbsp;&nbsp;
-    <a href="https://63days.github.io">Juil Koo</a><sup>*</sup> &nbsp;&nbsp;
-    <a href="https://dvelopery0115.github.io">Seungwoo Yoo</a> &nbsp;&nbsp;
-    <a href="https://minhyuk.sung.github.io">Minhyuk Sung</a>
-</p>
-<p align="center">
-    KAIST
-</p>
-<p align="center">
-    <sup>*</sup>Equal contribution
-</p>
+[**Yunhong Min**](https://myh4832.github.io)* · [**Juil Koo**](https://63days.github.io)* · [**Seungwoo Yoo**](https://dvelopery0115.github.io) · [**Minhyuk Sung**](https://mhsung.github.io) (* Equal Contribution)
 
----
+KAIST
 
-<p align="center">
-    <a href="https://arxiv.org/abs/2512.13255">
-        <img src="https://img.shields.io/badge/arXiv-2512.13255-b31b1b.svg?logo=arXiv">
-    </a>&nbsp;
-    <a href="https://arxiv.org/pdf/2512.13255">
-        <img src="https://img.shields.io/badge/paper-b31b1b.svg?logo=arXiv&color=6c68d4">
-    </a>&nbsp;
-    <a href="https://bezierflow.github.io">
-        <img src="https://img.shields.io/badge/project_page-blue?logo=github">
-    </a>
-</p>
+<span style="font-size: 1.5em;"><b>ICLR 2026</b></span>
 
-<p align="center">
-    <b>ICLR 2026</b>
-</p>
+<a href="https://arxiv.org/abs/2512.13255"><img src='https://img.shields.io/badge/arXiv-BézierFlow-red' alt='Paper PDF'></a>
+<a href='https://bezierflow.github.io'><img src='https://img.shields.io/badge/Project_Page-BézierFlow-green' alt='Project Page'></a>
 
-![Teaser Image](assets/bezierflow_teaser.png)
+<img src="./assets/bezierflow_teaser.png" alt="BezierFlow Teaser" width="100%">
+</div>
 
----
+<blockquote align="center">
+We introduce BézierFlow, a lightweight training approach for few-step generation with pretrained diffusion and flow models. BézierFlow achieves a 2–3× performance improvement for sampling with ≤ 10 NFEs while requiring only 15 minutes of training.
+</blockquote>
 
-## Introduction
+## News
+- **[2026.04.13]** 🚀 We have released the implementation of *BézierFlow: Learning Bézier Stochastic Interpolant Schedulers for Few-Step Generation*.
+- **[2026.01.27]** 🔥 Our work has been accepted to ICLR 2026.
 
-**BézierFlow** is a lightweight training approach for few-step generation with pretrained diffusion and flow models. By optimizing Bézier-parameterized stochastic interpolant noise schedules, BézierFlow achieves a **2–3× performance improvement** for sampling with **≤ 10 NFEs** while requiring only **minutes of training**.
-
----
+--- 
 
 ## Environment and Requirements
 
