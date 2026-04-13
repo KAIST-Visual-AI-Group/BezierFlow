@@ -61,18 +61,18 @@ mkdir -p pretrained fid-refs
 
 | Dataset | Source | Filename |
 |---------|--------|----------|
-| CIFAR-10 | [NVlabs/edm](https://nvlabs-fi-cdn.nvidia.com/edm/fid-refs/) | `cifar10-32x32.npz` |
-| FFHQ | [NVlabs/edm](https://nvlabs-fi-cdn.nvidia.com/edm/fid-refs/) | `ffhq-64x64.npz` |
-| AFHQv2 | [NVlabs/edm](https://nvlabs-fi-cdn.nvidia.com/edm/fid-refs/) | `afhqv2-64x64.npz` |
-| ImageNet 256 | [openai/guided-diffusion](https://github.com/openai/guided-diffusion/tree/main/evaluations) | `VIRTUAL_imagenet256_labeled.npz` |
+| CIFAR-10 32x32 | [NVlabs/edm](https://nvlabs-fi-cdn.nvidia.com/edm/fid-refs/) | `cifar10-32x32.npz` |
+| FFHQ 64x64 | [NVlabs/edm](https://nvlabs-fi-cdn.nvidia.com/edm/fid-refs/) | `ffhq-64x64.npz` |
+| AFHQv2 64x64 | [NVlabs/edm](https://nvlabs-fi-cdn.nvidia.com/edm/fid-refs/) | `afhqv2-64x64.npz` |
+| ImageNet 256x256 | [openai/guided-diffusion](https://github.com/openai/guided-diffusion/tree/main/evaluations) | `VIRTUAL_imagenet256_labeled.npz` |
 
 ---
 
 ## Usage
 
-BézierFlow follows a three-stage pipeline. Below are representative examples on CIFAR-10 for both a **diffusion model** (EDM) and a **flow model** (Rectified Flow). See `configs/` for all supported model configurations.
+Below are representative examples on CIFAR-10 for both a **diffusion model** (EDM) and a **flow model** (Rectified Flow). See `configs/` for all supported model configurations.
 
-### Stage 1: Generate Teacher Data
+### Generate Teacher Data
 
 Generate (latent, image) pairs from the pretrained model using the RK45 solver (can be different solvers):
 
@@ -94,9 +94,9 @@ Generate (latent, image) pairs from the pretrained model using the RK45 solver (
         --save_pt --save_png
     ```
 
-### Stage 2: Train BézierFlow
+### Train BézierFlow
 
-Optimize the Bézier noise scheduler with specific ODE solver and target NFE:
+Optimize the Bézier noise scheduler with specific ODE solver and target NFE. Use the `--low_gpu` flag to enable gradient checkpointing if you run out of memory.
 
 - **EDM (Diffusion)**
     ```bash
@@ -112,7 +112,7 @@ Optimize the Bézier noise scheduler with specific ODE solver and target NFE:
         --solver_name midpoint --steps 10
     ```
 
-### Stage 3: Evaluate (FID)
+### Evaluate (FID)
 
 Sample images using the learned schedule and compute FID:
 
